@@ -44,6 +44,8 @@
 		5D27BB511C99A57A00248E5F /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		5D27BB521C99A57A00248E5F /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		5D27BB531C99A57A00248E5F /* UML Class */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "UML Class"; sourceTree = "<group>"; };
+		5D9CD4F41C9C3FC0008559E1 /* NodesinCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NodesinCode-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D9CD4F51C9C3FC0008559E1 /* CTECList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,8 @@
 				5D27BB511C99A57A00248E5F /* Timer.cpp */,
 				5D27BB521C99A57A00248E5F /* Timer.h */,
 				5D27BB531C99A57A00248E5F /* UML Class */,
+				5D9CD4F51C9C3FC0008559E1 /* CTECList.h */,
+				5D9CD4F41C9C3FC0008559E1 /* NodesinCode-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,14 +265,21 @@
 		5D27BB421C99A4AD00248E5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/NodesinCode-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5D27BB431C99A4AD00248E5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/NodesinCode-Bridging-Header.h";
 			};
 			name = Release;
 		};
