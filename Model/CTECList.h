@@ -15,8 +15,26 @@ class CTECList
 {
 private:
     ArrayNode<Type> * head;
-    ArrayNode
+    ArrayNode<Type> * end;
+    int size;
+    void calculateSize();
+public:
+    CTECList();
+    virtual ~CTECList();
+    int getSize();
+    void addToFront(const Type& value);
+    void addToEnd (const Type& value);
+    void addAtIndex(int index, const Type& value);
+    Type getFront();
+    type getEnd();
+    Type getFromIndex(int index);
+    Type removeFromFront();
+    Type removeFromEnd();
+    Type removeFromIdex(int index);
+    Type set(int index, const Type& value);
+    int indexOf(Type searchValue);
 };
+                
 import Foundation
 
         ArrayNode<Type>  current = head;
