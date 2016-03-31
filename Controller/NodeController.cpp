@@ -82,7 +82,19 @@ void NodeController::doMergeSort()
 
 void NodeController::mergesort(int data[], int size )
 {
+    int sizeOne;
+    int sizeTwo;
     
+    if(size > 1)
+    {
+        sizeOne = size/2;
+        sizeTwo = size-sizeOne;
+        
+        mergesort(data, sizeOne);
+        mergesort((data+sizeOne), sizeTwo);
+        
+        merge(data, sizeOne, sizeTwo);
+    }
 }
 
 void NodeController::merge(int data[], int sizeOne, int sizeTwo)
