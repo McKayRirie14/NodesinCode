@@ -8,12 +8,12 @@
 #ifndef SRC_CONTROLLER_NODECONTROLLER_H_
 #define SRC_CONTROLLER_NODECONTROLLER_H_
 
-#include <iostream>
-#include <string>
-
 #include "../Model/Node.cpp"
 #include "../Model/ArrayNode.cpp"
 #include "../Model/CTECArray.cpp"
+#include "../Model/CTECList.cpp"
+#include "../Model/Timer.h"
+#include <string>
 
 using namespace std;
 
