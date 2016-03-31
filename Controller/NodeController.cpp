@@ -46,7 +46,7 @@ void NodeController::start()
 
 }
 
-void NodeControllertestList()
+void NodeController::testList()
 {
     
 }
@@ -68,15 +68,7 @@ void NodeController::doMergeSort()
     for(int spot = 0; spot < 5000; spot+)
     {
         int myRandom = rand();
-        mergeData[spot] = myRandom;
-    }
-    
-    Timer mergeTimer;
-    mergeTimer.startTimer();
-    mergeSort(mergeData, 5000);
-    mergeTimer.stopTimer();
-    mergeTimer.displayTimerInformation();
-    
+    }   
     
 }
 
@@ -134,3 +126,61 @@ void NodeController::merge(int data[], int sizeOne, int sizeTwo)
     }
     delete [] temp;
 }
+
+void nodeController::doBogo()
+{
+    int temp [10];
+    int check [10];
+}
+
+    for(int index = 0; index < 10; index++)
+    {
+        check[index] = index;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

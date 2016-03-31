@@ -20,10 +20,16 @@ using namespace std;
 class NodeController
 {
 private:
-	CTECArray<int> * notHipsterInts;
 	Timer arrayTimer;
-
-
+    void sortData();
+    void testList();
+    void searchTest();
+    void doBogo();
+    void bogosort();
+    int * mergeData;
+    void doMergesort();
+    void mergesort(int data [] size);
+    void merge(int data [], int sizeOne, int sizeTwo);
 public:
 	NodeController();
 	virtual ~NodeController();
