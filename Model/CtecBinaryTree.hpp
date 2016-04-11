@@ -19,7 +19,17 @@ private:
     TreeNode<Type> * root;
     int height;
     bool balancd;
+    boolcontains(Type value, CTECBinaryTree<Type> * currentTree);
 public:
+    CTECBinaryTree();
+    ~CTECBinaryTree();
+    bool insert(const Type& value);
+    bool contains(Type value);
+    Type remove(const Type& value);
+    int getHeight();
+    bool isBalanced();
+    TreeNode<Type> * getRoot();
+};
 }
 
 #endif /* CtecBinaryTree_hpp */
