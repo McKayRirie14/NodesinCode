@@ -20,8 +20,8 @@ private:
     void calculateSize();
 public:
     CTECList();
-    virtual ~CTECList();
-    int getSize();
+    virtual ~CTECList();000000
+    int getSize(); 
     void addToFront(const Type& value);
     void addToEnd (const Type& value);
     void addAtIndex(int index, const Type& value);
