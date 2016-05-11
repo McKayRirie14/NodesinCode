@@ -17,6 +17,7 @@
 		5D56C0071CDA47F7003DD05B /* CTECGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D56C0051CDA47F7003DD05B /* CTECGraph.cpp */; };
 		5D8A500D1CBBE87C00CA669B /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A500B1CBBE87C00CA669B /* TreeNode.cpp */; };
 		5D8A50101CBBFA7F00CA669B /* CtecBinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A500E1CBBFA7F00CA669B /* CtecBinaryTree.cpp */; };
+		5D997B781CDB90C800C53F34 /* MorningHashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D997B761CDB90C800C53F34 /* MorningHashTable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,8 @@
 		5D8A500B1CBBE87C00CA669B /* TreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		5D8A500E1CBBFA7F00CA669B /* CtecBinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CtecBinaryTree.cpp; sourceTree = "<group>"; };
 		5D8A500F1CBBFA7F00CA669B /* CtecBinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CtecBinaryTree.hpp; sourceTree = "<group>"; };
+		5D997B761CDB90C800C53F34 /* MorningHashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MorningHashTable.cpp; sourceTree = "<group>"; };
+		5D997B771CDB90C800C53F34 /* MorningHashTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MorningHashTable.hpp; sourceTree = "<group>"; };
 		5D9CD4F41C9C3FC0008559E1 /* NodesinCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NodesinCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		5D9CD4F51C9C3FC0008559E1 /* CTECList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTECList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +128,8 @@
 				5D8A500F1CBBFA7F00CA669B /* CtecBinaryTree.hpp */,
 				5D56C0051CDA47F7003DD05B /* CTECGraph.cpp */,
 				5D56C0061CDA47F7003DD05B /* CTECGraph.hpp */,
+				5D997B761CDB90C800C53F34 /* MorningHashTable.cpp */,
+				5D997B771CDB90C800C53F34 /* MorningHashTable.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D997B781CDB90C800C53F34 /* MorningHashTable.cpp in Sources */,
 				5D27BB591C99A57A00248E5F /* Node.cpp in Sources */,
 				5D27BB561C99A57A00248E5F /* Runner.cpp in Sources */,
 				5D27BB5A1C99A57A00248E5F /* Timer.cpp in Sources */,
