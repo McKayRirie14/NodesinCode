@@ -9,7 +9,7 @@
 #include <iostream>
 
 template <class Type>
-Node<Type>::Node(const Type& value)
+Node<Type>::Node()
 {
 	this->value = value;
 	pointers = nullptr;
