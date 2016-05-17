@@ -6,30 +6,67 @@
 //  Copyright © 2016 CTEC. All rights reserved.
 //
 
-#include "TreeNode.hpp"
-#define TreeNode_h
+#include "TreeNode.h"
 
-#include "Node.h"
+using namespace CTECData;
 
-template <class Type>
-class TreeNode : public CTECData::Node<Type>
+template<class Type>
+TreeNode<Type> :: TreeNode() : Node<Type>()
 {
-private:
-    TreeNode<Type> * leftChild;
-    TreeNode<Type> * rightChild;
-    TreeNode<Type> * parent;
-public:
-    TreeNode();
-    TreeNode(const Type& value);
-    TreeNode(const Type& value, TreeNode<Type> * parent);
-    voidsetLeftChild(TreeNode<Type>* leftChild);
-    voidsetrightChild(TreeNode<Type>* rightChild);
-    void setParent(TreeNode<Type>* parent);
-    TreeNode<Type> * getLeftChild();
-    TreeNode<Type> * getRightChild();
-    TreeNode<Type> * getParent();
+    this->leftChild = nullptr;
+    this->rightChild = nullptr;
+    this->parent = nullptr;
+}
 
-};
+template<class Type>
+TreeNode<Type> :: TreeNode(const Type& value) : Node<Type>(value)
+{
+    this->leftChild = nullptr;
+    this->rightChild = nullptr;
+    this->parent = nullptr;
+    this->setValue(value);
+}
 
+template<class Type>
+TreeNode<Type> :: TreeNode(const Type& value, TreeNode<Type> * parent) : Node<Type>(value)
+{
+    this->leftChild = nullptr;
+    this->rightChild = nullptr;
+    this->parent = parent;
+}
 
-#endIf /* TreeNode_h */
+template<class Type>
+TreeNode<Type> *  TreeNode<Type>::getLeftChild()
+{
+    return getLeftChild;
+}
+
+template<class Type>
+void TreeNode<Type>::setLeftChild(TreeNode<Type> * leftChild)
+{
+    return setLeftChild;
+}
+
+template<class Type>
+TreeNode<Type> * TreeNode<Type>::getRightChild()
+{
+    return getRightChild;
+}
+
+template<class Type>
+void TreeNode<Type>::setRightChild(TreeNode<Type> * rightChild)
+{
+    return setRightChild;
+}
+
+template<class Type>
+TreeNode<Type> * TreeNode<Type>::getParent()
+{
+    return getParent;
+}
+
+template<class Type>
+void TreeNode<Type>:: setParent(TreeNode<Type> * parent)
+{
+    return setParent;
+}

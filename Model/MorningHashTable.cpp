@@ -6,7 +6,8 @@
 //  Copyright © 2016 CTEC. All rights reserved.
 //
 
-#include "HashTable.hpp"
+
+#include "MorningHashTable.hpp"
 
 template <class Type>
 
@@ -16,7 +17,7 @@ HashTable<Type>:: HashTable()
     this->capacity = 101;
     this->efficiencyPercentage = .667;
     this->size = 0;
-    this->internalStorag = new HashNode<Type>[capacity];
+    this->internalStorage = new HashNode<Type>[capacity];
 };
 template <class Type>
 HashTable<Type>:: ~HashTable()
@@ -54,22 +55,16 @@ void HashTable<Type>:: add(HashNode<Type> currentNode)
             }
             
             internalStorage[positionToInsert] = currentNode;
-            
         }
         
         else
             
         {
-            
             internalStorage[positionToInsert] = currentNode;
-            
         }
-        
     }
     
 };
-
-
 
 template <class Type>
 
@@ -81,17 +76,11 @@ int HashTable<Type>:: findPosition(HashNode<Type> currentNode)
     
     int position = 0;
     
-    
-    
     position = currentNode.getKe() % capacity;
-    
-    
     
     return position;
     
 };
-
-
 
 template <class Type>
 
@@ -101,33 +90,22 @@ int HashTable<Type>:: getNextPrime()
     
     int nextPrime = (capacity * 2) + 1;
     
-    
-    
     while(!isPrime(nextPrime))
         
     {
-        
         nextPrime++;
-        
     }
-    
-    
     
     return nextPrime;
     
 };
-
-
 
 template <class Type>
 
 bool HashTable<Type> :: isPrime(int candidateNumber)
 
 {
-    
     bool isPrime = true;
-    
-    
     
     if(candidateNumber <= 1)
         
@@ -174,8 +152,6 @@ void HashTable<Type> :: updateSize()
     int updatedCapacity = getNextPrime();
     
     HashNode<Type>* updatedStorage = new HashTable<Type> [updatedCapacity];
-    
-    
     
     int oldCapacity = capacity;
     capacity = updatedCapacity;

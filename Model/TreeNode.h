@@ -7,16 +7,31 @@
 //
 
 #include "Node.h"
+#ifndef TreeNode_h
+#define TreeNode_h
 
-template <class Type>
-TreeNode<Type> :: TreeNode() : CTECData::Node<Type>()
+namespace CTECData
 {
-    this->leftChild = nullptr;
-    this->rightChild = nullptr;
-    this->parent = nullptr;
+    template <class Type>
+    class TreeNode : public Node<Type>
+    {
+    private:
+        TreeNode<Type> * leftChild;
+        TreeNode<Type> * rightChild;
+        TreeNode<Type> * parent;
+    public:
+        TreeNode();
+        TreeNode(const Type& value);
+        TreeNode(const Type& value, TreeNode<Type> * parent);
+        
+        void setLeftChild(TreeNode<Type> * leftChild);
+        void setRightChild(TreeNode<Type> * rightChild);
+        void setParent(TreeNode<Type> * parent);
+        
+        TreeNode<Type> * getParent();
+        TreeNode<Type> * getLeftChild();
+        TreeNode<Type> * getRightChild();
+    };
 }
 
-template <class Type>
-TreeNode<Type> :: TreeNode(const)
-
-#endIf /* TreeNode_h */
+#endif /* TreeNode_h */
