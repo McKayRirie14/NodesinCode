@@ -6,79 +6,160 @@
 //  Copyright © 2016 CTEC. All rights reserved.
 //
 
-#include "CTECGraph.hpp"
+#include "MorningGraph.hpp"
+using namespace std;
+
 
 using namespace CTECData;
 
-template <class Type>
-const int CTECGraph<Type> :: MAXIMUM;
+template<class Type>
+const int MorningGraph<Type> :: MAXIMUM;
+
+
+template<class Type>
+MorningGraph <Type>:: MorningGraph()
+{
+    //  this->vertex = 0;
+}
+
+template<class Type>
+MorningGraph<Type> :: ~MorningGraph()
+{
+    
+}
 
 template <class Type>
-void CTECGraph<Type> :: addVertex(const Type& value)
+int MorningGraph<Type> :: size() const{
+    return manyVertices;
+}
+
+template <class Type>
+
+void MorningGraph<Type>:: addEdge(int source, int target)
 {
+    assert(source < size());
+    assert(target < size());
+    edges[source][target] = true;
+}
+
+template<class Type>
+void MorningGraph<Type> :: addVertex(const Type& vertexlable)
+{
+    int newVertexNmber;
+    int otherNumber;
+    
     assert(size() < MAXIMUM);
-    int newVertexNumber = manyVerticies;
-    manyVerticies++;
     
-    for(int otherVertexNumber = 0; otherVertexNumber < manyVerticies; otherVertexNumber++)
+    newVertexNmber = manyVertices;
+    ++manyVertices;
+    for(otherNumber = 0; otherNumber< manyVertices; otherNumber ++)
     {
-        adjacencyMatrix[otherVertexNumber] [newVertexNumber] = false;
-        adjacencyMatrix[newVertexNumber] [otherVertexNumber] = false;
+        edges[otherNumber][newVertexNmber] = false;
+        edges[newVertexNmber] [otherNumber] = false;
     }
-    labels[newVertexNumber] = value;
-}
-
-template <class Type>
-void CTECGraph<Type> :: addEdge(int source, int target)
-{
-    assert(source < size() && target < size());
-    adjacencyMatrix[source][target] = true;
-}
-
-template <class Type>
-bool CTECGraph<Type> :: isEdge(int source, int target) const
-{
-    assert(source < size() && target < size());
-    bool isAnEdge = false;
-    isAnEdge = adjacencyMatrix[source][target];
-
-    return isAnEdge;
-}
-
-template <class Type>
-Type& CTECGraph <Type> :: operator[](int vertex)
-{
-    assert(vertex < size());
-    return labels[vertex];
-}
-
-template <class Type>
-Type CTECGraph <Type> :: operator[](int vertex) const
-{
-    assert(vertex < size());
-    return labels[vertex];
-}
-
-template <class Type>
-std::set<int> CTECGraph<Type>:: neighbors(int vertex) const
-{
-    assert(vertex < size());
-    std::set<int> vertexNeighbors;
     
-    for(int index = 0; index < size(); index++)
+    //    vertexlable[newVertexNmber] = vertexlable;
+}
+
+template<class Type>
+bool MorningGraph<Type>:: isEdge(int source, int target) const
+{
+    bool connected = false;
+    
+    assert(source < size() && target < size());
+    connected = edges [source][target];
+    
+    return connected;
+}
+template <class Type>
+void MorningGraph<Type>::depthFirstTraversal(MorningGraph<Type> currentGraph,int vertex)
+{
+    bool markedVertices[MAXIMUM];
+    assert(vertex < currentGraph.size());
+    std::fill_n(markedVertices, currentGraph.size(),false);
+    depthFirstTraersl(currentGraph,vertex,markedVertices);
+    
+}
+template <class Type>
+void MorningGraph<Type>:: depthFirstTraversal(MorningGraph<Type> currentGraph,int vertex, bool * markdVertices)
+{
+    bool markedVertieces[MAXIMUM];
+    std::set<int>connections = currentGraph.neighbos(vertex);
+    std::set<int>::iterator setIterator;
+    
+    markdVertices[vertex] = true;
+    count << currentGraph[vertex] << end;
+    
+    for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
     {
-        
-        if(adjacencyMatrix[vertex] [index])
+        if(!markdVertices[*setIterator])
         {
-            vertexNeighbors.insert(index);
-        }        
+            depthFirstTraversal(currentGraph,*setIterator,markdVertices);
+        }
     }
-    return vertexNeighbors;
+}
+template<class Type>
+void MorningGraph<Type> :: breadthFirstTraversal(MorningGraph<Type> currentGraph, int vertex)
+{
+    //    bool markedVertices[MAXIMUM];
+    //    std::set<int> connections;
+    //    std::set<int>:: iterator setIterator;
+    //    std::queue<int> (vertexQueue);
+    //    assert(vertex < currentGraph.size());
+    //
+    //    std::fill_n(markedVertices,currentGraph.size(), false);
+    //    markedVertices[vertex]= true;
+    //    count<<currentGraph[vertex] << end;
+    //    verteQueue.push(vertex);
+    //    while(!vertexQueue.empty())
+    //    {
+    //        connections = currentGraph.neighbors(vrtexQueue.front());
+    //        vertexqueu.pop();
+    //        for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
+    //        {
+    //            if(!markedVertices[*setIterator])
+    //            {
+    //                markedVertices[*setIterator] = true;
+    //                count << currentGraph [* setIterator] << endl;
+    //                vertexQueue.push(*setIterator);
+    //            }
+    //        }
+    //    }
+    
+    
+}
+template<class Type>
+Type & MorningGraph <Type>:: operator[] (int vertex)
+{
+    assert(vertex < size());
+    return lables[vertex];
+    
+}
+template<class Type>
+Type MorningGraph<Type>:: operator[] (int vertex)const
+{
+    assert(vertex < size());
+    return lables[vertex];
+    
+}
+template<class Type>
+std::set<int> MorningGraph<Type> ::neighbors (int vertex) const
+{
+    std::set<int> answer;
+    assert(vertex<size());
+    for(int index=0; index < size(); index++)
+    {
+        if (edges [vertex][index])
+        {
+            answer.insert(index);
+        }
+    }
+    return answer;
 }
 
-template <class Type>
-void CTECGraph<Type> :: removeEdge(int source, int target)
+template<class Type>
+void MorningGraph<Type> :: removeEdge(int source,int target)
 {
-    assert(source < size() && target < size());
-    adjacencyMatrix [source] [target] = false;
+    assert(source <size() && target<size());
+    edges[source][target] = false;
 }
