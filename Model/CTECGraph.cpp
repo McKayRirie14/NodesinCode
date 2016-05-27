@@ -6,36 +6,36 @@
 //  Copyright © 2016 CTEC. All rights reserved.
 //
 
-#include "MorningGraph.hpp"
+#include "CTECGraph.hpp"
 using namespace std;
 
 
 using namespace CTECData;
 
 template<class Type>
-const int MorningGraph<Type> :: MAXIMUM;
+const int CTECGraph<Type> :: MAXIMUM;
 
 
 template<class Type>
-MorningGraph <Type>:: MorningGraph()
+CTECGraph <Type>:: MorningGraph()
 {
     //  this->vertex = 0;
 }
 
 template<class Type>
-MorningGraph<Type> :: ~MorningGraph()
+CTECGraph<Type> :: ~MorningGraph()
 {
     
 }
 
 template <class Type>
-int MorningGraph<Type> :: size() const{
+int CTECGraph<Type> :: size() const{
     return manyVertices;
 }
 
 template <class Type>
 
-void MorningGraph<Type>:: addEdge(int source, int target)
+void CTECGraph<Type>:: addEdge(int source, int target)
 {
     assert(source < size());
     assert(target < size());
@@ -43,7 +43,7 @@ void MorningGraph<Type>:: addEdge(int source, int target)
 }
 
 template<class Type>
-void MorningGraph<Type> :: addVertex(const Type& vertexlable)
+void CTECGraph<Type> :: addVertex(const Type& vertexlable)
 {
     int newVertexNmber;
     int otherNumber;
@@ -62,7 +62,7 @@ void MorningGraph<Type> :: addVertex(const Type& vertexlable)
 }
 
 template<class Type>
-bool MorningGraph<Type>:: isEdge(int source, int target) const
+bool CTECGraph<Type>:: isEdge(int source, int target) const
 {
     bool connected = false;
     
@@ -72,7 +72,7 @@ bool MorningGraph<Type>:: isEdge(int source, int target) const
     return connected;
 }
 template <class Type>
-void MorningGraph<Type>::depthFirstTraversal(MorningGraph<Type> currentGraph,int vertex)
+void CTECGraph<Type>::depthFirstTraversal(CTECGraph<Type> currentGraph,int vertex)
 {
     bool markedVertices[MAXIMUM];
     assert(vertex < currentGraph.size());
@@ -81,7 +81,7 @@ void MorningGraph<Type>::depthFirstTraversal(MorningGraph<Type> currentGraph,int
     
 }
 template <class Type>
-void MorningGraph<Type>:: depthFirstTraversal(MorningGraph<Type> currentGraph,int vertex, bool * markdVertices)
+void CTECGraph<Type>:: depthFirstTraversal(CTECGraph<Type> currentGraph,int vertex, bool * markdVertices)
 {
     bool markedVertieces[MAXIMUM];
     std::set<int>connections = currentGraph.neighbos(vertex);
@@ -99,7 +99,7 @@ void MorningGraph<Type>:: depthFirstTraversal(MorningGraph<Type> currentGraph,in
     }
 }
 template<class Type>
-void MorningGraph<Type> :: breadthFirstTraversal(MorningGraph<Type> currentGraph, int vertex)
+void CTECGraph<Type> :: breadthFirstTraversal(CTECGraph<Type> currentGraph, int vertex)
 {
     //    bool markedVertices[MAXIMUM];
     //    std::set<int> connections;
@@ -129,21 +129,21 @@ void MorningGraph<Type> :: breadthFirstTraversal(MorningGraph<Type> currentGraph
     
 }
 template<class Type>
-Type & MorningGraph <Type>:: operator[] (int vertex)
+Type & CTECGraph <Type>:: operator[] (int vertex)
 {
     assert(vertex < size());
     return lables[vertex];
     
 }
 template<class Type>
-Type MorningGraph<Type>:: operator[] (int vertex)const
+Type CTECGraph<Type>:: operator[] (int vertex)const
 {
     assert(vertex < size());
     return lables[vertex];
     
 }
 template<class Type>
-std::set<int> MorningGraph<Type> ::neighbors (int vertex) const
+std::set<int> CTECGraph<Type> ::neighbors (int vertex) const
 {
     std::set<int> answer;
     assert(vertex<size());
@@ -158,7 +158,7 @@ std::set<int> MorningGraph<Type> ::neighbors (int vertex) const
 }
 
 template<class Type>
-void MorningGraph<Type> :: removeEdge(int source,int target)
+void CTECGraph<Type> :: removeEdge(int source,int target)
 {
     assert(source <size() && target<size());
     edges[source][target] = false;
