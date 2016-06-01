@@ -61,6 +61,49 @@ void NodeController::sortData()
     
 }
 
+void NodeController::tryGraphs()
+{
+    Graph<int> testGraph;
+    testGraph.addVertex(7);
+    testGraph.addVertex(18);
+    testGraph.addVertex(9);
+    testGraph.addVertex(17);
+    testGraph.addVertex(6);
+    testGraph.addVertex(3);
+    testGraph.addVertex(52);
+    testGraph.addVertex(68);
+    testGraph.addVertex(23);
+    testGraph.addVertex(35);
+    //Add at least 7 vertices.
+    //Connct the vertices
+    testGraph.addEdge(0,1);
+    testGraph.addEdge(1,2);
+    testGraph.addEdge(2,3);
+    testGraph.addEdge(6,7);
+    testGraph.addEdge(7,8);
+    testGraph.addEdge(8,9);
+    
+    
+    testGraph.breadthFirstTraversal(testerGraph, 0);
+}
+
+void NodeController :: tryTree()
+{
+    CTECBinaryTree<int> testTree;
+    testTree.insert(7);
+    testTree.insert(10);
+    testTree.insert(-5);
+    
+    cout << testTree.contains(4) << endl;
+    cout << " Inorder Traveral " << endl;
+    testTree.inorderTraversal(testTree.getRoot());
+    cout << " \nPreoder Traversal " << endl;
+    testTree.preorderTraversal(testTree.getRoot());
+    cout << " \nPostorder Traversal " << endl;
+    testTree.postorderTraversal(testTree.getRoot());
+    cout<< " Tree " << endl;
+}
+
 void NodeController:: testHashTable()
 {
     HashTable<int> tempTable;
